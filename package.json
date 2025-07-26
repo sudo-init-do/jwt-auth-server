@@ -1,0 +1,22 @@
+{
+  "name": "jwt-auth-server",
+  "version": "1.0.0",
+  "description": "Simple JWT authentication server using Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": ["express", "jwt", "auth", "backend"],
+  "author": "Oyeyemi Obaloluwa",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
