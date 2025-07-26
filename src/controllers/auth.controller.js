@@ -5,11 +5,15 @@ const bcrypt = require('bcrypt');
 const dummyUser = {
   id: 1,
   username: 'student',
-  passwordHash: bcrypt.hashSync('password123', 10),
+  passwordHash: bcrypt.hashSync('password123', 10), 
 };
 
 exports.login = (req, res) => {
   const { username, password } = req.body;
+
+  console.log("USERNAME RECEIVED:", username);
+  console.log("PASSWORD RECEIVED:", password);
+  console.log("PASSWORD MATCH:", bcrypt.compareSync(password, dummyUser.passwordHash));
 
   if (username !== dummyUser.username || !bcrypt.compareSync(password, dummyUser.passwordHash)) {
     return res.status(401).json({ message: 'Invalid credentials' });
